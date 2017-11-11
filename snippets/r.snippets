@@ -97,3 +97,51 @@ snippet addrow
 snippet bioc
 	source("https://bioconductor.org/biocLite.R")
 	biocLite()
+	
+snippet iflib
+	if(!require(${1:package})){install.packages('${1:package}')} library(${1:package})
+
+snippet wantlib
+	# Check that required packages are installed:
+	want = c("parallel","rjags","runjags","compute.es")
+	have = want %in% rownames(installed.packages())
+	if ( any(!have) ) { install.packages( want[!have] ) }
+
+snippet gg
+	ggplot(${1:data}, aes(${2:aes})) + 
+	  geom_${3:geom}()
+	
+# from https://github.com/dgrtwo/snippets/blob/master/r.snippets
+snippet S3
+	${1:funcname} <- function(${2:args}, ...) UseMethod("${1:funcname}")
+
+snippet exported
+	#' ${1:funcname}
+	#'
+	#' @param ${2:param} description
+	#'
+	#' @export
+	${1:funcname} <- function(${2:param}) {
+
+#  type !rnorm(5)<Shift-Tab>,
+snippet !
+	`r eval(parse(text = "$$"))`
+
+# http://stackoverflow.com/questions/43764111/how-to-convert-dtm-to-tdm-in-r
+# efficient on memory
+snippet tDTM 
+	t(as.DocumentTermMatrix(slam::as.simple_triplet_matrix(content.dtm),weighting=identity))
+
+# Build a scatter plot with mean and 95% CI
+snippet summaryPLot
+	library(ggplot2movies)
+	set.seed(123)
+	movies_small <- movies[sample(nrow(movies), 1000), ]
+	movies_small$rating <- factor(round(movies_small$rating))
+	ggplot(movies_small, aes(x = rating, y = votes)) +
+		geom_point() +
+		stat_summary(fun.data = "mean_cl_normal",
+			geom = "crossbar",
+			width = 0.2,
+			col = "red") +
+			scale_y_log10()

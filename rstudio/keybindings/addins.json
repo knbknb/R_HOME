@@ -1,0 +1,5 @@
+{
+    "AlignAssign::alignAssign" : "Ctrl+Shift+'",
+    "AlignAssign::alignAssign2" : "Ctrl+Shift+3",
+    "styler::style_selection" : "Ctrl+Shift+F"
+}
