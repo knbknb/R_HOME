@@ -97,7 +97,6 @@ snippet addrow
 snippet bioc
 	source("https://bioconductor.org/biocLite.R")
 	biocLite()
-
 snippet iflib
 	if(!require(${1:package})){install.packages('${1:package}')} library(${1:package})
 
@@ -165,3 +164,17 @@ snippet hugo3js_boilerplate
 	htmltools::HTML('{{ <div id="webgl-container"></div>
 	<script src="static/js/vendor/three.min.js"></script>
 	<script src="static/js/threejs-knbknb/threejs-app.js"></script> }}')
+
+# Hugo Shortcode: figure: in  Rmd files, include as `r `
+snippet hugofig
+	htmltools::HTML('{{< figure src="https://bookdown.org/yihui/blogdown/images/logo.png" width="40px" title="">}}')
+
+
+# in markdown, add an HTML snippet that loooks like a RestructuredText 'Admonition'
+snippet admonition
+	htmltools::HTML('<div class="alert alert-warning"><b>NOTE</b></div>')
+
+#Hugo Shortcode: github gist. number i
+snippet hugogist
+	htmltools::HTML('{{< gist knbknb 1d17caecd9b800d5148a30d537013668 >}}')
+
