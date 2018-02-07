@@ -1,5 +1,8 @@
 {
-    "AlignAssign::alignAssign" : "Ctrl+Shift+'",
-    "AlignAssign::alignAssign2" : "Ctrl+Shift+3",
-    "styler::style_selection" : "Ctrl+Shift+F"
+    "AlignAssign::alignAssign" : "Ctrl+Shift+Alt+A",
+    "AlignAssign::alignAssign2" : "Ctrl+Shift+Alt+E",
+    "blogdown::serve_site" : "Ctrl+Shift+Alt+B",
+    "ggThemeAssist::ggThemeAssistAddin" : "Ctrl+Shift+Alt+G",
+    "styler::style_active_file" : "Ctrl+Shift+Alt+F",
+    "styler::style_selection" : "Ctrl+Shift+Alt+S"
 }

@@ -89,7 +89,7 @@ snippet ts
 snippet show5
 	sapply(${1:list}[ ,1:5], range)
 
-# once you upgrade dplyr 
+# once you upgrade dplyr
 # you'll get a deprecation msg for add_rownames() in favour of tibble::...
 snippet addrow
 	mtcars %>% tibble::rownames_to_column("car")
@@ -97,7 +97,7 @@ snippet addrow
 snippet bioc
 	source("https://bioconductor.org/biocLite.R")
 	biocLite()
-	
+
 snippet iflib
 	if(!require(${1:package})){install.packages('${1:package}')} library(${1:package})
 
@@ -108,9 +108,9 @@ snippet wantlib
 	if ( any(!have) ) { install.packages( want[!have] ) }
 
 snippet gg
-	ggplot(${1:data}, aes(${2:aes})) + 
+	ggplot(${1:data}, aes(${2:aes})) +
 	  geom_${3:geom}()
-	
+
 # from https://github.com/dgrtwo/snippets/blob/master/r.snippets
 snippet S3
 	${1:funcname} <- function(${2:args}, ...) UseMethod("${1:funcname}")
@@ -129,7 +129,7 @@ snippet !
 
 # http://stackoverflow.com/questions/43764111/how-to-convert-dtm-to-tdm-in-r
 # efficient on memory
-snippet tDTM 
+snippet tDTM
 	t(as.DocumentTermMatrix(slam::as.simple_triplet_matrix(content.dtm),weighting=identity))
 
 # Build a scatter plot with mean and 95% CI
@@ -145,3 +145,23 @@ snippet summaryPLot
 			width = 0.2,
 			col = "red") +
 			scale_y_log10()
+
+# Hugo Shortcode: figure: in  Rmd files, include as `r `
+snippet hugofig
+	htmltools::HTML('{{< figure src="https://bookdown.org/yihui/blogdown/images/logo.png" width="40px" title="">}}')
+
+
+# in markdown, add an HTML snippet that loooks like a RestructuredText 'Admonition'
+# alert-success, alert-info or alert-danger
+snippet hugoadmonition
+	htmltools::HTML('<div class="alert alert-success alert-info alert-warning alert-danger"><b>NOTE</b></div>')
+
+#Hugo Shortcode: github gist
+snippet hugogist
+	htmltools::HTML('{{< gist knbknb 1d17caecd9b800d5148a30d537013668/ >}}')
+
+
+snippet hugo3js_boilerplate
+	htmltools::HTML('{{ <div id="webgl-container"></div>
+	<script src="static/js/vendor/three.min.js"></script>
+	<script src="static/js/threejs-knbknb/threejs-app.js"></script> }}')
