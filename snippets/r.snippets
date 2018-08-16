@@ -178,3 +178,30 @@ snippet admonition
 snippet hugogist
 	htmltools::HTML('{{< gist knbknb 1d17caecd9b800d5148a30d537013668 >}}')
 
+
+snippet totalRow
+        # add a last row with "Total:"
+	library(tidyverse)
+	library(pander)
+	forcats::gss_cat %>% 
+		filter(race != "Other", marital != "No answer") %>% 
+		count(race, marital) %>% 
+		bind_rows(summarise_at(., vars(n), funs(sum)) %>% 
+			mutate(marital= "**Total**")) %>% 
+		pandoc.table()
+	
+snippet ifRDS
+	outfile <- "meetup-r-attendees-2015-2018.RDS"
+	if (!file.exists(outfile)) {
+		saveRDS(attendees, outfile)
+	} else {
+		attendees <- readRDS(outfile)
+	}
+
+snippet detailsRmd
+	# move this above code block(s)
+	#<details> 
+	#<summary>Show details....</summary> 
+	# ...and this below
+	#</details> 
+	
