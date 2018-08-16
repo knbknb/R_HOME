@@ -132,7 +132,7 @@ snippet tDTM
 	t(as.DocumentTermMatrix(slam::as.simple_triplet_matrix(content.dtm),weighting=identity))
 
 # Build a scatter plot with mean and 95% CI
-snippet summaryPLot
+snippet summaryPlot
 	library(ggplot2movies)
 	set.seed(123)
 	movies_small <- movies[sample(nrow(movies), 1000), ]
@@ -155,6 +155,7 @@ snippet hugofig
 snippet hugoadmonition
 	htmltools::HTML('<div class="alert alert-success alert-info alert-warning alert-danger"><b>NOTE</b></div>')
 
+
 #Hugo Shortcode: github gist
 snippet hugogist
 	htmltools::HTML('{{< gist knbknb 1d17caecd9b800d5148a30d537013668/ >}}')
@@ -170,17 +171,8 @@ snippet hugofig
 	htmltools::HTML('{{< figure src="https://bookdown.org/yihui/blogdown/images/logo.png" width="40px" title="">}}')
 
 
-# in markdown, add an HTML snippet that loooks like a RestructuredText 'Admonition'
-snippet admonition
-	htmltools::HTML('<div class="alert alert-warning"><b>NOTE</b></div>')
-
-#Hugo Shortcode: github gist. number i
-snippet hugogist
-	htmltools::HTML('{{< gist knbknb 1d17caecd9b800d5148a30d537013668 >}}')
-
-
 snippet totalRow
-        # add a last row with "Total:"
+	# add a last row with "Total:"
 	library(tidyverse)
 	library(pander)
 	forcats::gss_cat %>% 
