@@ -1,8 +1,12 @@
 {
     "AlignAssign::alignAssign" : "Ctrl+Shift+Alt+A",
     "AlignAssign::alignAssign2" : "Ctrl+Shift+Alt+E",
-    "blogdown::serve_site" : "Ctrl+Shift+Alt+B",
+    "WrapRmd::wrap_rmd_addin" : "Ctrl+Shift+/",
+    "blogdown::serve_site" : "Ctrl+Shift+Alt+H",
     "ggThemeAssist::ggThemeAssistAddin" : "Ctrl+Shift+Alt+G",
+    "strcode::insert_l1_break" : "Ctrl+Shift+Alt+B",
+    "strcode::insert_l2_break" : "Ctrl+Shift+Alt+'",
+    "strcode::insert_l3_break" : "Ctrl+Shift+Alt+3",
     "styler::style_active_file" : "Ctrl+Shift+Alt+F",
     "styler::style_selection" : "Ctrl+Shift+Alt+S"
 }

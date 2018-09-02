@@ -178,3 +178,9 @@ snippet admonition
 snippet hugogist
 	htmltools::HTML('{{< gist knbknb 1d17caecd9b800d5148a30d537013668 >}}')
 
+snippet https
+	req <- httr::GET(myurl,
+		config = httr::config(ssl_verifypeer = FALSE))
+	dat <- content(req, as="text")
+	write(dat, "out.html")
+
