@@ -1,3 +1,4 @@
 {
+    "executeCurrentChunk" : "Ctrl+Shift+Enter",
     "goToNextChunk" : "Ctrl+Down"
 }

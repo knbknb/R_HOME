@@ -184,7 +184,7 @@ snippet totalRow
 		pandoc.table()
 	
 snippet ifRDS
-	outfile <- "meetup-r-attendees-2015-2018.RDS"
+	outfile <- "_.RDS"
 	if (!file.exists(outfile)) {
 		saveRDS(attendees, outfile)
 	} else {
@@ -197,10 +197,22 @@ snippet https
 	dat <- content(req, as="text")
 	write(dat, "out.html")
 
-snippet detailsRmd
-	# move this above code block(s)
-	#<details> 
-	#<summary>Show details....</summary> 
-	# ...and this below
-	#</details> 
+
+snippet listColFilter
+	# if you have a list column (col) 
+	# and want to filter for ones that contain an entry 
+	# ("my_term"): 
+	library(purrr) 
+	library(dplyr) 
+	Df %>% filter(map_lgl(col, ~ "my_term" %in% .))
+	
+snippet libs
+	library(broom)
+	library(tidyverse)
+	library(lubridate)
+	theme_set(theme_bw())
+	
+
+snippet aa
+	${1:dataset} <- ${1:dataset} %>% ${0}
 	
