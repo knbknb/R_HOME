@@ -216,3 +216,21 @@ snippet libs
 snippet aa
 	${1:dataset} <- ${1:dataset} %>% ${0}
 	
+snippet foldshow
+	---
+	output:
+		html_document:
+			code_folding: hide
+	---
+	
+	```{r}
+	knitr::opts_chunk$set(class.source='fold-show')
+	```
+	
+	```{r}
+	'Shown by default'
+	```
+	
+	```{r class.source = NULL}
+	'Hidden manually'
+	```
